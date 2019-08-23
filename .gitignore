@@ -1,0 +1,7 @@
+/.vscode/..
+/.idea/
+db.sqlite3
+*/_pycache/..
+*/_pycache/..
+*._pyc
+
