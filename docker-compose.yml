@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: 'postgres:latest',
+    expose:
+      - '5432'
+  app:
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+  nginx:
+    restart: always
+    build:
+      dockerfile: dockerfile
+      context: ./nginx
+    ports:
+      - '8000:80'
+
